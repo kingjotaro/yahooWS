@@ -8,7 +8,7 @@ const dataPesquisa = "Mar 10, 1998"; /* input a ser dado dinamicamente */
 const { TimeoutError } = require('puppeteer');
 (async() => { 
     /* await pupt.launch espera o navegador do puppeteer iniciar, headless false mostra o navegador */
-    const browser = await pupt.launch();
+    await puppeteer.launch({ args: ['--no-sandbox'] });
 
     /* abri uma nova aba */
     const page = await browser.newPage();
