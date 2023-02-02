@@ -11,7 +11,8 @@ const { TimeoutError } = require('puppeteer');
     const browser = await pupt.launch();
 
     /* abri uma nova aba */
-    const page = await browser.newPage();
+    const browser = await pupt.launch({ args: ['--no-sandbox'] });
+
 
     /* log para saber se o navegador esta aberto */
     console.log('iniciou')
