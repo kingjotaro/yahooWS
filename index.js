@@ -8,11 +8,10 @@ const inputDate = "Mar 10, 1998"; /* input a ser dado dinamicamente */
 const { TimeoutError } = require('puppeteer');
 (async() => { 
     /* await pupt.launch espera o navegador do puppeteer iniciar, headless false mostra o navegador */
-    const browser = await pupt.launch();
-
-    /* abri uma nova aba */
     const browser = await pupt.launch({ args: ['--no-sandbox'] });
 
+    /* abri uma nova aba */
+    const page = await browser.newPage();
 
     /* log para saber se o navegador esta aberto */
     console.log('iniciou')
